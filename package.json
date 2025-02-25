@@ -1,0 +1,21 @@
+{
+  "name": "teams-to-gather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc -b && node dist/index.js"
+  },
+  "author": "Manuel Pickl",
+  "license": "MIT",
+  "dependencies": {
+    "@gathertown/gather-game-client": "^38.0.1",
+    "dotenv": "^16.4.7",
+    "isomorphic-ws": "^4.0.1",
+    "ws": "^8.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "typescript": "4.3.4"
+  }
+}
