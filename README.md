@@ -10,13 +10,18 @@ Detect your Microsoft Teams call status and update your availability in Gather a
 ### 1. Clone the Repository
 
 ### 2. Configuration
-Create `.env` based on `.env.dist` and replace `GATHER_API_KEY` with your actual [api key](https://app.gather.town/apikeys) & `GATHER_SPACE_ID` with the value from your gather url https://app.gather.town/app/**GATHER_SPACE_ID**.
+Create a `.env` file manually from `.env.dist` or run:
+
+```sh
+cp .env.dist .env
+```
+
+Then, update the following values:
+* `GATHER_API_KEY`: Replace with your actual [API key](https://app.gather.town/apikeys).
+* `GATHER_SPACE_ID`: Use the corresponding value from your Gather URL: https://app.gather.town/app/<GATHER_SPACE_ID>.
 
 > [!NOTE]
-> You can customize the update interval and other settings in there too.
-
-### 2. Configuration
-Create a `.env` file from `.env.dist`, then replace `GATHER_API_KEY` with your actual [API key](https://app.gather.town/apikeys) and `GATHER_SPACE_ID` with the corresponding value from your Gather URL: https://app.gather.town/app/**GATHER_SPACE_ID**.
+> You can also customize other settings in this file.
 
 ### 3. Install & Set Up Background Service
 ```sh
