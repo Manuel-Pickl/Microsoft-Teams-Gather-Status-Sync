@@ -1,9 +1,11 @@
 import { Game } from '@gathertown/gather-game-client';
 import { exec } from 'child_process';
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
+import path from "path";
+import { getRepoDirectory } from '../utils';
 
+dotenv.config({ path: path.resolve(getRepoDirectory(), ".env") });
 global.WebSocket = require("isomorphic-ws");
-dotenv.config();
 
 let gather: Game;
 let previousStatus = false;
@@ -11,6 +13,7 @@ let previousStatus = false;
 const execShellCommand = (cmd: string): Promise<string> => new Promise(res => exec(cmd, (_, out) => res(out?.trim() || "")));
 
 const inCall = async (): Promise<boolean | null> => {
+    console.log(process.env.TEAMS_LOG_DURATION);
     const log = await execShellCommand(`log show --style syslog --last ${process.env.TEAMS_LOG_DURATION} --process "powerd" | grep "Microsoft Teams Call in progress"`);
     const events = log.split("\n").reverse();
 
@@ -22,7 +25,7 @@ const inCall = async (): Promise<boolean | null> => {
 };
 
 const initializeGather = () => {
-    gather = new Game(process.env.SPACE_ID, () => Promise.resolve({ apiKey: process.env.API_KEY ?? '' }));
+    gather = new Game(process.env.GATHER_SPACE_ID, () => Promise.resolve({ apiKey: process.env.GATHER_API_KEY ?? '' }));
     gather.connect();
     gather.subscribeToConnection((connected) => console.log("Connected to Gather.Town:", connected));
 }

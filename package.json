@@ -1,10 +1,11 @@
 {
-  "name": "teams-to-gather",
+  "name": "microsoft-teams-gather-status-sync",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "Detect your Microsoft Teams call status and update your availability in Gather accordingly.",
   "scripts": {
-    "start": "tsc -b && node dist/index.js"
+    "setup": "tsc -b && node dist/src/scripts/setup.js",
+    "remove": "tsc -b && node dist/src/scripts/remove.js",
+    "check": "tsc -b && node dist/src/scripts/check.js"
   },
   "author": "Manuel Pickl",
   "license": "MIT",
