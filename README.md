@@ -1,11 +1,14 @@
-# Microsoft Teams ⇆ Gather <br/> Status Sync  
+# Microsoft Teams ⇆ Gather <br/> Status Sync (macOS)
 
 Detect your Microsoft Teams call status and update your availability in Gather accordingly.
 
+## 📦 Installation
+
+### Prerequisites ###
+* [Node.js](https://nodejs.org/en/download)
+
 > [!IMPORTANT]
 > You don’t need access to the Microsoft Graph API.
-
-## 📦 Installation
 
 ### 1. Clone the Repository
 
